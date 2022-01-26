@@ -122,7 +122,7 @@ describe('A linked list implementation', () => {
     })
 
     describe('`removeHead` method', () => {
-      xit('should return the `value` of the removed head node', () => {
+      it('should return the `value` of the removed head node', () => {
         linkedList.addToTail('first')
         linkedList.addToTail('second')
         linkedList.addToTail('third')
@@ -131,7 +131,7 @@ describe('A linked list implementation', () => {
         expect(linkedList.removeHead()).to.equal('third')
       })
 
-      xit('should reassign the `head` after the current head node is removed', () => {
+      it('should reassign the `head` after the current head node is removed', () => {
         linkedList.addToTail('first')
         linkedList.addToTail('second')
         linkedList.addToTail('third')
@@ -143,7 +143,7 @@ describe('A linked list implementation', () => {
         expect(linkedList.head.value).to.equal('third')
       })
 
-      xit('should make sure the `previous` of any newly appointed head is null', () => {
+      it('should make sure the `previous` of any newly appointed head is null', () => {
         linkedList.addToTail('first')
         linkedList.addToTail('second')
         linkedList.addToTail('third')
@@ -157,7 +157,7 @@ describe('A linked list implementation', () => {
         expect(linkedList.head.previous).to.equal(null)
       })
 
-      xit('returns null if there is no head to remove (ie: the list is empty, or all nodes have been removed)', () => {
+      it('returns null if there is no head to remove (ie: the list is empty, or all nodes have been removed)', () => {
         expect(linkedList.removeHead()).to.equal(null)
 
         linkedList.addToTail('first')
@@ -169,7 +169,7 @@ describe('A linked list implementation', () => {
         expect(linkedList.removeHead()).to.equal(null)
       })
 
-      xit('should reset head and tail to null when last node is removed', () => {
+      it('should reset head and tail to null when last node is removed', () => {
         linkedList.addToTail('first')
         linkedList.removeHead()
         expect(linkedList.head).to.equal(null)
@@ -178,7 +178,7 @@ describe('A linked list implementation', () => {
     })
 
     describe('`removeTail` method', () => {
-      xit('should return the `value` of the removed tail node', () => {
+      it('should return the `value` of the removed tail node', () => {
         linkedList.addToTail('first')
         linkedList.addToTail('second')
         linkedList.addToTail('third')
@@ -187,7 +187,7 @@ describe('A linked list implementation', () => {
         expect(linkedList.removeTail()).to.equal('first')
       })
 
-      xit('should reassign the `tail` after the current tail node is removed', () => {
+      it('should reassign the `tail` after the current tail node is removed', () => {
         linkedList.addToTail('first')
         linkedList.addToTail('second')
         linkedList.addToTail('third')
@@ -199,7 +199,7 @@ describe('A linked list implementation', () => {
         expect(linkedList.tail.value).to.equal('first')
       })
 
-      xit('should make sure the `next` of any newly appointed tail is null', () => {
+      it('should make sure the `next` of any newly appointed tail is null', () => {
         linkedList.addToTail('first')
         linkedList.addToTail('second')
         linkedList.addToTail('third')
@@ -213,7 +213,7 @@ describe('A linked list implementation', () => {
         expect(linkedList.tail.next).to.equal(null)
       })
 
-      xit('returns null if there is no tail to remove (ie: the list is empty, or all nodes have been removed)', () => {
+      it('returns null if there is no tail to remove (ie: the list is empty, or all nodes have been removed)', () => {
         expect(linkedList.removeTail()).to.equal(null)
 
         linkedList.addToTail('first')
@@ -231,7 +231,7 @@ describe('A linked list implementation', () => {
     // When the comparator is a string, the `search` method will compare each node's `value` with the comparator string.
     // When the comparator is a function, that function will accept a value as a parameter and return a boolean indicating if the value is a match. The `search` method will use the comparator function on each node's `value` to determine if it is a match.
     describe('`search` method', () => {
-      xit('should return the correct values when searching for a string or number', () => {
+      it('should return the correct values when searching for a string or number', () => {
         linkedList.addToTail('one')
         linkedList.addToTail('two')
         linkedList.addToTail('three')
@@ -240,7 +240,7 @@ describe('A linked list implementation', () => {
         expect(linkedList.search('three')).to.equal('three')
       })
 
-      xit('should be able to take functions as search inputs', () => {
+      it('should be able to take functions as search inputs', () => {
         linkedList.addToTail('one')
         linkedList.addToTail('two')
         const foundNode = linkedList.search((nodeValue) => {
@@ -251,7 +251,7 @@ describe('A linked list implementation', () => {
 
       // This spec demonstrates the utility of the previous spec.
       // If you are passing the last one correctly, this one should already pass!
-      xit('should therefore be able to store and search for objects, not just strings', () => {
+      it('should therefore be able to store and search for objects, not just strings', () => {
         function UserNode (name, email, city) {
           this.name = name
           this.email = email
