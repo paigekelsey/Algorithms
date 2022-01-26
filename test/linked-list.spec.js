@@ -50,12 +50,12 @@ describe('A linked list implementation', () => {
   })
 
   describe('`LinkedList` class', () => {
-    xit('should take no arguments in the constructor and define head and tail to be null', () => {
+    it('should take no arguments in the constructor and define head and tail to be null', () => {
       expect(linkedList.head).to.equal(null)
       expect(linkedList.tail).to.equal(null)
     })
 
-    xit('has methods `addToTail`, `addToHead`, `removeHead`, `removeTail`, and `search`', () => {
+    it('has methods `addToTail`, `addToHead`, `removeHead`, `removeTail`, and `search`', () => {
       expect(typeof linkedList.addToTail).to.equal('function')
       expect(typeof linkedList.addToHead).to.equal('function')
       expect(typeof linkedList.removeHead).to.equal('function')
@@ -64,17 +64,17 @@ describe('A linked list implementation', () => {
     })
 
     describe('`addToTail` method', () => {
-      xit('should take a value as a parameter', () => {
+      it('should take a value as a parameter', () => {
         // the length of a function returns how many parameters it has
         expect(linkedList.addToTail.length).to.equal(1)
       })
 
-      xit('should use `Node` class to add nodes', () => {
+      it('should use `Node` class to add nodes', () => {
         linkedList.addToTail('first')
         expect(linkedList.tail instanceof Node).to.equal(true)
       })
 
-      xit('should be able to add to tail without removing or overwriting existing nodes', () => {
+      it('should be able to add to tail without removing or overwriting existing nodes', () => {
         linkedList.addToTail('first')
         expect(linkedList.tail.value).to.equal('first')
 
@@ -83,7 +83,7 @@ describe('A linked list implementation', () => {
         expect(linkedList.tail.previous.value).to.equal('first')
       })
 
-      xit('if the linked list consists of a single node after adding to tail, that node should be both the head and the tail', () => {
+      it('if the linked list consists of a single node after adding to tail, that node should be both the head and the tail', () => {
         linkedList.addToTail('only')
         expect(linkedList.head.value).to.equal('only')
         expect(linkedList.head).to.equal(linkedList.tail)
@@ -93,17 +93,17 @@ describe('A linked list implementation', () => {
     })
 
     describe('`addToHead` method', () => {
-      xit('should take a value as a parameter', () => {
+      it('should take a value as a parameter', () => {
         // the length of a function returns how many parameters it has
         expect(linkedList.addToHead.length).to.equal(1)
       })
 
-      xit('should use `Node` class to add nodes', () => {
+      it('should use `Node` class to add nodes', () => {
         linkedList.addToHead('first')
         expect(linkedList.head instanceof Node).to.equal(true)
       })
 
-      xit('should be able to add to head without removing or overwriting existing nodes', () => {
+      it('should be able to add to head without removing or overwriting existing nodes', () => {
         linkedList.addToHead('first')
         expect(linkedList.head.value).to.equal('first')
 
@@ -112,7 +112,7 @@ describe('A linked list implementation', () => {
         expect(linkedList.head.next.value).to.equal('first')
       })
 
-      xit('if the linked list consists of a single node after adding to head, that node should be both the head and the tail', () => {
+      it('if the linked list consists of a single node after adding to head, that node should be both the head and the tail', () => {
         linkedList.addToHead('only')
         expect(linkedList.head.value).to.equal('only')
         expect(linkedList.head).to.equal(linkedList.tail)
